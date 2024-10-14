@@ -1,12 +1,13 @@
 .req-div{
-    // border: 1px solid;
     display: flex;
     flex-direction: column;
     gap: 10px;
     h3{
         font-size: 1.8rem;
+        text-align: center;
     }
     label{
         font-size: 1.2rem;
+        text-align: center;
     }
 }

@@ -1,0 +1,30 @@
+.result-div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    h3{
+        font-size: 1.7rem;
+        text-align: center;
+    }
+    p{
+        text-align: center;
+    }
+    .res-div{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        div{
+            box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+            background: #e8e8e8;
+            padding: 10px;
+            border-radius: 7px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .one{
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
