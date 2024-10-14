@@ -1,0 +1,10 @@
+nav{
+    position: absolute;
+    top: 2%;
+    left: 15px;
+    font-size: 1.4rem;
+    transition: .2s ease;
+    &:hover{
+        scale: 1.05;
+    }
+}

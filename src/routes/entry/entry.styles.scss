@@ -1,0 +1,33 @@
+.entry-div{
+    // border: 1px solid;
+    height: 100%;
+    // width: 100%;
+    width: min(95vh,320px);
+    h3{
+        font-size: 1.5rem;
+        margin-top: 25%;
+        text-align: center;
+    }
+    form{
+        margin-top: 20px;
+        display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 250px;
+            label{
+                font-size: 1.2rem;
+                text-align: center;
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                gap: 10px;
+                justify-content: center;
+            }
+        }
+    }
+}
