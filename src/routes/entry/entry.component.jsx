@@ -6,7 +6,7 @@ import { FaSnowflake } from 'react-icons/fa6';
 import { GiStumpRegrowth } from 'react-icons/gi';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 
 const Entry=({cropName,soilHealth,weatherCondition,growthStage,handleSetCropName,handleSetSoilHealth,handleSetWeatherCondition,handleSetGrowthStage,numOfCrops})=>{
@@ -16,9 +16,10 @@ const Entry=({cropName,soilHealth,weatherCondition,growthStage,handleSetCropName
     const uniqueWeatherConditionArray =[...new Set(cropWithActualFertilizer.map(c=>c.weather_condition))]
     const navigateRouter = useNavigate();
     const [count,setCount]=useState(0);
+    const triggerAnimationRef = useRef(null);
 
     return(
-        <div className='entry-div animate__animated animate__fadeInRight'>
+        <div className='entry-div animate__animated animate__fadeInRight' ref={triggerAnimationRef}>
         <h3>Enter Form Details</h3>
         <h4>Crop : {count+1}</h4>
             <form onSubmit={(e)=>{
@@ -63,7 +64,15 @@ const Entry=({cropName,soilHealth,weatherCondition,growthStage,handleSetCropName
                         <option value="Maturity" >Maturity</option>
                     </select>
                 </div>
-                    {count === numOfCrops ? <button type='submit'>Submit</button> : <button type='button' onClick={()=>setCount(prev=>prev+1)}>Next</button>}
+                    {count === numOfCrops ? <button type='submit'>Submit</button> : <button type='button' onClick={
+                        ()=>{
+                            if(cropName.length === 0) cropName.push(uniqueCropArray[0])
+                            if(soilHealth.length === 0) soilHealth.push(uniqueSoilHealthArray[0])
+                            if(weatherCondition.length === 0) weatherCondition.push(uniqueWeatherConditionArray[0])
+                            if(growthStage.length === 0) growthStage.push("Germination")
+                            setCount(prev=>prev+1)
+                            }
+                        }>Next</button>}
             </form>
         </div>
     )

@@ -17,6 +17,7 @@ const Home=({setCropName,setGrowthStage,setNumOfCrops,setSoilHealth,setWeatherCo
         setSoilHealth([]);
         setWeatherCondition([]);
         setScoreArr({});
+        alert('reset successfully.')
     }
 
     return(
